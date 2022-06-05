@@ -1,1 +1,142 @@
-/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+/* SCSS RGB */
+$prussian-blue: rgba(0, 48, 73, 1);
+$maximum-red: rgba(214, 40, 40, 1);
+$orange: rgba(247, 127, 0, 1);
+$maximum-yellow-red: rgba(252, 191, 73, 1);
+$lemon-meringue: rgba(234, 226, 183, 1);
+
+/* SCSS Gradient */
+$gradient-top: linear-gradient(0deg, #003049ff, #d62828ff, #f77f00ff, #fcbf49ff, #eae2b7ff);
+$gradient-right: linear-gradient(90deg, #003049ff, #d62828ff, #f77f00ff, #fcbf49ff, #eae2b7ff);
+$gradient-bottom: linear-gradient(180deg, #003049ff, #d62828ff, #f77f00ff, #fcbf49ff, #eae2b7ff);
+$gradient-left: linear-gradient(270deg, #003049ff, #d62828ff, #f77f00ff, #fcbf49ff, #eae2b7ff);
+$gradient-top-right: linear-gradient(45deg, #003049ff, #d62828ff, #f77f00ff, #fcbf49ff, #eae2b7ff);
+$gradient-bottom-right: linear-gradient(135deg, #003049ff, #d62828ff, #f77f00ff, #fcbf49ff, #eae2b7ff);
+$gradient-top-left: linear-gradient(225deg, #003049ff, #d62828ff, #f77f00ff, #fcbf49ff, #eae2b7ff);
+$gradient-bottom-left: linear-gradient(315deg, #003049ff, #d62828ff, #f77f00ff, #fcbf49ff, #eae2b7ff);
+$gradient-radial: radial-gradient(#003049ff, #d62828ff, #f77f00ff, #fcbf49ff, #eae2b7ff);
+
+@mixin box-d {
+	border-radius: 0.5rem;
+	@include font-size(1.8rem);
+	padding: 1rem;
+}
+
+html {
+	font-size: 16px;
+}
+
+html,
+body,
+#root,
+.app {
+	height: 100%;
+}
+
+body {
+	font-family: "IBM Plex Mono", monospace;
+	background-color: $lemon-meringue;
+	color: $prussian-blue;
+	@include font-size(1rem);
+}
+
+.text-b {
+	color: $prussian-blue;
+}
+.text-r {
+	color: $maximum-red;
+}
+
+.budget {
+	@include box-d;
+	background-color: $orange;
+	color: $prussian-blue;
+}
+
+.rem {
+	@include box-d;
+	background-color: $prussian-blue;
+	color: $maximum-yellow-red;
+}
+.total {
+	@include box-d;
+	background-color: $maximum-red;
+	color: $lemon-meringue;
+}
+
+.bg-o {
+	background-color: $orange;
+}
+
+.bg-y {
+	background-color: $maximum-yellow-red;
+}
+
+input[type="text"],
+input[type="number"] {
+	width: 100%;
+	height: 100%;
+	border: none;
+	border-bottom: $prussian-blue 1px solid;
+	color: $prussian-blue;
+	background-color: transparent;
+}
+
+.list-group-item {
+	background-color: $lemon-meringue;
+	border: $prussian-blue 1px solid;
+}
+
+.list-group-item:hover {
+	background-color: darken($lemon-meringue, 5%);
+}
+
+.txt-input:focus {
+	border: none;
+	background-color: darken($lemon-meringue, 5%);
+	outline: none;
+	border-bottom: $prussian-blue 1px solid;
+}
+
+.num-input:focus {
+	border: none;
+	background-color: darken($orange, 5%);
+	outline: none;
+	border-bottom: $prussian-blue 1px solid;
+}
+
+.hint {
+	font-size: 0.7rem;
+}
+
+button {
+	display: inline-block;
+	background-color: $prussian-blue;
+	font-weight: bold;
+	line-height: 1.5;
+	color: $orange;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	border: 1px solid transparent;
+	padding: 0rem 0.5rem;
+	font-size: 1.2rem;
+	border-radius: 0.2rem;
+
+	&:focus {
+		outline: none;
+		box-shadow: none;
+	}
+	&:active {
+		box-shadow: 0 0 0 0.1rem lighten(black, 50%);
+	}
+}
+
+.c-pointer {
+	cursor: pointer;
+}
