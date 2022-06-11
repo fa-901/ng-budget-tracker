@@ -1,1 +1,39 @@
-<p>button-group works!</p>
+<div class="row my-4 g-3">
+	<div class="col-md-4">
+		<div class="budget d-flex align-items-center">
+			<div class="me-3">
+				<ng-container *ngIf="!isEdit">
+					Budget:
+					{{ this.budget | currency: "USD":"symbol":"0.0-2" }}
+				</ng-container>
+				<input
+					type="number"
+					class="num-input"
+					*ngIf="isEdit"
+					[value]="this.budget"
+					(change)="onInputChange($event)"
+					(keyup.enter)="toggleEdit()"
+				/>
+			</div>
+			<button class="ms-auto" (click)="toggleEdit()">
+				<i class="far fa-{{ isEdit ? 'save' : 'edit' }}"></i>
+			</button>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="rem d-flex align-items-center">
+			<div class="me-3">
+				Remaining:
+				{{ this.remaining | currency: "USD":"symbol":"0.0-2" }}
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="total d-flex align-items-center">
+			<div class="me-3">
+				Total spent:
+				{{ this.spent | currency: "USD":"symbol":"0.0-2" }}
+			</div>
+		</div>
+	</div>
+</div>
