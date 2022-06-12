@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ButtonGroupComponent } from './components/button-group/button-group.component';
 import { FormInputComponent } from './components/form-input/form-input.component';
 import { ListGroupComponent } from './components/list-group/list-group.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
 	declarations: [
@@ -14,7 +15,7 @@ import { ListGroupComponent } from './components/list-group/list-group.component
 		ListGroupComponent,
 		ButtonGroupComponent,
 	],
-	imports: [BrowserModule, CommonModule],
+	imports: [BrowserModule, CommonModule, FormsModule],
 	providers: [],
 	bootstrap: [AppComponent],
 })

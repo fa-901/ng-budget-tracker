@@ -13,4 +13,8 @@ export class ItemServiceService {
 	set setAmount(value: number) {
 		this.budget = value;
 	}
+
+	set addItem(item: IItem) {
+		this.itemList.push(item);
+	}
 }

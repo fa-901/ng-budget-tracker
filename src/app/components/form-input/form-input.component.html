@@ -1,1 +1,33 @@
-<p>form-input works!</p>
+<div class="mb-4">
+	<h2 class="">Add Expense</h2>
+	<div class="d-flex">
+		<div class="flex-fill me-2">
+			<input
+				class="txt-input"
+				placeholder="Name"
+				type="text"
+				[(ngModel)]="name"
+				(keyup.enter)="submitForm()"
+				(focus)="toggleFocus()"
+				(blur)="toggleFocus()"
+			/>
+		</div>
+		<div class="flex-fill mx-2">
+			<input
+				class="txt-input"
+				placeholder="Cost"
+				type="number"
+				[(ngModel)]="value"
+				(keyup.enter)="submitForm()"
+				(focus)="toggleFocus()"
+				(blur)="toggleFocus()"
+			/>
+		</div>
+		<button (click)="submitForm()">
+			<i class="far fa-save" aria-hidden="true"></i>
+		</button>
+	</div>
+	<div class="text-center hint" *ngIf="isFocused">
+		Press 'Enter' to save. Or use the button
+	</div>
+</div>
