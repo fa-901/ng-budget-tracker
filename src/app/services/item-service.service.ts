@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
+import { IItem } from '../types/common';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class ItemServiceService {
 	budget = 100;
+	itemList: IItem[] = [];
 
 	constructor() {}
 
-	setAmount(value: number) {
+	set setAmount(value: number) {
 		this.budget = value;
 	}
 }

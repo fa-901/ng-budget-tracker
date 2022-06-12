@@ -27,6 +27,6 @@ export class ButtonGroupComponent {
 
 	onInputChange(event: Event) {
 		const value = Number((event.target as HTMLInputElement).value);
-		this.itemService.setAmount(value);
+		this.itemService.setAmount = value;
 	}
 }
