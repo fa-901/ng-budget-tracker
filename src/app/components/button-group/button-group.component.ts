@@ -14,9 +14,11 @@ export class ButtonGroupComponent {
 	get remaining() {
 		return this.itemService.budget;
 	}
+	//TODO
 	get spent() {
 		return this.itemService.budget;
 	}
+	//TODO
 	get budget() {
 		return this.itemService.budget;
 	}

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { IItem } from '../types/common';
 
 @Injectable({
@@ -16,5 +16,8 @@ export class ItemServiceService {
 
 	set addItem(item: IItem) {
 		this.itemList.push(item);
+		this.listUpdated.emit(this.itemList);
 	}
+
+	listUpdated = new EventEmitter();
 }

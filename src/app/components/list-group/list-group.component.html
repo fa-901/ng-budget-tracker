@@ -1,1 +1,29 @@
-<p>list-group works!</p>
+<h2>Expense List</h2>
+<div class="mb-3">
+	<input
+		class="txt-input"
+		placeholder="Search..."
+		type="text"
+		[(ngModel)]="search"
+		(keyup.enter)="searchItem()"
+		(ngModelChange)="searchItem()"
+	/>
+</div>
+<ul class="list-group">
+	<li class="list-group-item d-flex" *ngFor="let item of filteredList">
+		<span>{{ item.name }}</span>
+		<span class="ms-auto">
+			<span class="rounded-pill p-1 bg-y">
+				{{ item.value | currency: "USD":"symbol":"0.0-2" }}
+			</span>
+			<span
+				class="ms-2 fs-6 fas fa-times c-pointer"
+				aria-hidden="true"
+				(click)="deleteItem()"
+			></span
+		></span>
+	</li>
+	<div class="text-center hint" *ngIf="fullList.length < 1">
+		You have no items in your list
+	</div>
+</ul>
