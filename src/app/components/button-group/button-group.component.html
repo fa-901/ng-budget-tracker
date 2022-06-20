@@ -24,7 +24,12 @@
 		<div class="rem d-flex align-items-center">
 			<div class="me-3">
 				Remaining:
-				{{ this.remaining | currency: "USD":"symbol":"0.0-2" }}
+				<ng-container *ngIf="this.remaining >= 0">
+					{{ this.remaining | currency: "USD":"symbol":"0.0-2" }}
+				</ng-container>
+				<ng-container *ngIf="this.remaining < 0">
+					over limit
+				</ng-container>
 			</div>
 		</div>
 	</div>

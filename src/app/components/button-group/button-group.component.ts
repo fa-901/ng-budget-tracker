@@ -12,13 +12,16 @@ export class ButtonGroupComponent {
 	constructor(private itemService: ItemServiceService) {}
 
 	get remaining() {
-		return this.itemService.budget;
+		return this.itemService.budget - this.spent;
 	}
-	//TODO
+
 	get spent() {
-		return this.itemService.budget;
+		const sum = this.itemService.itemList.reduce((prev, item) => {
+			return item.value + prev;
+		}, 0);
+		return sum;
 	}
-	//TODO
+
 	get budget() {
 		return this.itemService.budget;
 	}
