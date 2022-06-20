@@ -19,5 +19,11 @@ export class ItemServiceService {
 		this.listUpdated.emit(this.itemList);
 	}
 
+	set removeItem(id: number) {
+		const itemIndex = this.itemList.findIndex((item) => item.id === id);
+		this.itemList.splice(itemIndex, 1);
+		this.listUpdated.emit(this.itemList);
+	}
+
 	listUpdated = new EventEmitter();
 }

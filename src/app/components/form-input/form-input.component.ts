@@ -18,6 +18,7 @@ export class FormInputComponent {
 		const result: IItem = {
 			name: name,
 			value: Number(value),
+			id: new Date().getTime(),
 		};
 		this.itemService.addItem = result;
 		this.name = '';

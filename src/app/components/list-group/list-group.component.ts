@@ -17,8 +17,9 @@ export class ListGroupComponent implements OnInit {
 		return this.itemService.itemList;
 	}
 
-	//TODO
-	deleteItem() {}
+	deleteItem(id: number) {
+		this.itemService.removeItem = id;
+	}
 
 	searchItem() {
 		const { itemList } = this.itemService;
